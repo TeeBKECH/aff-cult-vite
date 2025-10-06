@@ -1,0 +1,11 @@
+header.header
+  .container.header_container
+    +Burger({fn: 'mobile-menu'})
+    +Logo()
+    +Btn(`Лучшие карты`, ['grad', 'rounded', 'md', 'f16', 'mobile'])
+    +TopicMobile()
+    +Search({})
+    .header_actions
+      +Btn(`Лучшие карты`, ['grad', 'rounded', 'lg', 'f18'])
+      +Btn(`Войти`, ['default', 'rounded', 'lg', 'f18'])
+

@@ -1,0 +1,111 @@
+.copy {
+  &-to {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    $to: &;
+
+    &_discount {
+      line-height: 1;
+      font-size: 12px;
+      color: $CULT-FLAME;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+      border-radius: 25px;
+      background: $color-12;
+    }
+    &_promocode {
+      font-size: 14px;
+      color: $CULT-FLAME;
+      font-weight: 500;
+      line-height: 1;
+    }
+    &_btn {
+      position: relative;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background: $color-12;
+      }
+    }
+    &_toast {
+      --offset: 8px;
+
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      transform: translate(-50%, var(--offset));
+      opacity: 0;
+
+      background: #fff;
+      color: $CULT-FLAME;
+      font-size: 12px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 10;
+
+      animation: toast-slide 2s ease-in-out forwards;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #fff;
+      }
+    }
+    &_icon {
+    }
+
+    &-md {
+      gap: 8px;
+      #{$to}_discount {
+        font-size: 14px;
+        padding: 12px;
+      }
+      #{$to}_promocode {
+        font-size: 16px;
+      }
+      #{$to}_icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+/* Анимация: снизу вверх → пауза 1s → исчезновение */
+@keyframes toast-slide {
+  0% {
+    transform: translate(-50%, 8px);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, 0);
+    opacity: 1; /* удерживаем ~1s (20%→70% при 2s) */
+  }
+  100% {
+    transform: translate(-50%, -8px);
+    opacity: 0;
+  }
+}

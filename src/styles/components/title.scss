@@ -1,0 +1,36 @@
+.title {
+  color: $SHADOW-RITE;
+  font-weight: 700;
+  line-height: 1.3;
+
+  &-h1 {
+    font-size: 32px;
+
+    @include respond-to(md) {
+      font-size: 24px;
+    }
+  }
+
+  &-h2 {
+    font-size: 24px;
+
+    @include respond-to(md) {
+      font-size: 20px;
+    }
+  }
+
+  &-h3 {
+    font-size: 18px;
+  }
+
+  &-commercial {
+    color: $CULT-FLAME;
+  }
+}
+
+.subTitle {
+  color: $SHADOW-RITE;
+  font-weight: 300;
+  line-height: 1.3;
+  font-size: 14px;
+}
