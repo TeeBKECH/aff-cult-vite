@@ -1,6 +1,6 @@
 //- @title: Инфлюенсеры
 //- @description: Описание Инфлюенсеров
-extends ../layouts/default-2.pug
+extends ../layouts/default.pug
 
 block content
   // Filters
@@ -9,7 +9,7 @@ block content
   
   // Services Table
   +Box({})
-    +TableInfluencersNew([
+    +TableInfluencers([
       {
         img: 'assets/images/public/infl/1.jpg',
         title: 'Александр Дужников',

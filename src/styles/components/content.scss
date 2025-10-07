@@ -10,7 +10,8 @@
 
   @include respond-to(lg) {
     grid-template-columns: minmax(0, 1fr);
-    padding: 16px 8px 75px;
+    padding: 8px 8px 75px;
+    gap: 8px;
   }
 
   &-ad {
@@ -18,13 +19,12 @@
 
     @include respond-to(lg) {
       grid-template-columns: minmax(0, 1fr);
-    }
-  }
-
-  &--new {
-    @include respond-to(lg) {
       padding: 8px 8px 75px;
       gap: 8px;
     }
+  }
+
+  &--links {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

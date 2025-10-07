@@ -612,5 +612,140 @@
         }
       }
     }
+
+    &#{$table}-tg {
+      #{$table}_head {
+        @include respond-to(xl-2) {
+          grid-template-columns: 150px 82px 44px 68px 82px;
+          gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 150px 82px 1fr;
+        }
+
+        @include respond-to(lg) {
+          grid-template-columns: 150px 82px 44px 68px 1fr;
+        }
+
+        @include respond-to(sm) {
+          grid-template-columns: 1fr 1fr 28px;
+        }
+
+        &_item {
+          &--oxvat,
+          &--dinamic {
+            @include respond-to(xl) {
+              display: none;
+            }
+
+            @include respond-to(lg) {
+              display: flex;
+            }
+
+            @include respond-to(sm) {
+              display: none;
+            }
+          }
+
+          &--subs {
+            @include respond-to(sm) {
+              display: flex;
+              justify-content: center;
+            }
+          }
+
+          &:last-child {
+            @include respond-to(xl) {
+              display: flex;
+              justify-content: flex-end;
+            }
+
+            @include respond-to(sm) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #{$table}_items {
+      }
+
+      #{$table}_item {
+        @include respond-to(xl-2) {
+          // gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          // grid-template-columns: 14px 50px 90px 85px auto auto;
+          // padding: 5px;
+        }
+
+        @include respond-to(sm) {
+          // grid-template-columns: 14px 50px 85px 75px auto auto;
+        }
+
+        &_logo {
+          @include respond-to(xl-2) {
+            // margin-bottom: auto;
+          }
+        }
+
+        &_name {
+          a {
+            @include respond-to(xl-2) {
+              // font-size: 8px;
+            }
+
+            @include respond-to(xl) {
+              // font-size: 14px;
+            }
+          }
+        }
+
+        &_price {
+          @include respond-to(xs) {
+            // justify-content: flex-end;
+          }
+        }
+
+        &_col {
+          &--mobile-xl {
+            // grid-column: 1/4;
+            // gap: 16px;
+            // justify-content: space-between;
+          }
+
+          .copy-to {
+            // margin-right: auto;
+          }
+
+          &:last-child {
+            // justify-content: flex-end;
+            @include respond-to(xl) {
+            }
+
+            @include respond-to(xs) {
+              // grid-column: 1/6;
+            }
+          }
+
+          &--action {
+            #{$table}_btn_arrow {
+              // display: none;
+              @include respond-to(sm) {
+                // display: flex;
+              }
+            }
+
+            .btn {
+              @include respond-to(sm) {
+                // display: none;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

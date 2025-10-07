@@ -142,7 +142,7 @@ mixin FiltersAlt(props = {})
             +Btn(`Применить`, [`primary`, 'md', 'f16'])
 
 mixin FiltersVacancies()
-  .filters-vacancies 
+  .filters-vacancies.filters-alt.filters--new
     .filters_items
       input.filters_item.filters_item-input#vacancies-search(type='text', placeholder='Профессия, должность или компания')
 

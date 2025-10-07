@@ -64,6 +64,20 @@ textarea {
   font-family: $font-main;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .link {
+    a {
+      @include respond-to(sm) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 @import '@/styles/components/btn';
 @import '@/styles/components/header';
 @import '@/styles/components/container';

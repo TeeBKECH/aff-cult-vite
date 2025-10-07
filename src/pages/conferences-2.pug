@@ -1,11 +1,11 @@
 //- @title: Конференции
 //- @description: Описание конференций
-extends ../layouts/default-2.pug
+extends ../layouts/default.pug
 
 block content
   // Filters
   +Box({type: 'shadow'}, 'Конференции')
-    +FiltersAlt({variant: 'new'})
+    +FiltersAlt()
   
   // Conferences
   +Box({type: 'commercial'})

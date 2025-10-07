@@ -1,0 +1,5 @@
+mixin Link({num = 0, link = '', ver= ''})
+  if (link)
+    .link
+      span= `${num} ${ver ? '(' + ver + ') ' : ''}`
+      a(href=link, target="_blank")= link

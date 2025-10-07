@@ -1,9 +1,20 @@
 mixin Conference(item, size)
   article.conference(class=`${size ? 'conference-' + size : ''}${item.commercial ? ' conference-commercial' : ''}`)
     if (size !== 'past')
-      .conference_dates
-        span.conference_dates_big= item.dates
-        span.conference_dates_small= item.mounth
+      if (size === 'alt-dates')
+        .conference_dates.conference_dates--new
+          .conference_date
+            span.conference_date_small с
+            span.conference_date_big 31
+            span.conference_date_small Января
+          .conference_date
+            span.conference_date_small по
+            span.conference_date_big 6
+            span.conference_date_small Февраля
+      else
+        .conference_dates
+          span.conference_dates_big= item.dates
+          span.conference_dates_small= item.mounth
     .conference_preview
       img(src=item.preview, alt=item.title)
     .conference_content

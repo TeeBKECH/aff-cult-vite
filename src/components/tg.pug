@@ -1,5 +1,5 @@
 mixin TgCard(props, commercial = false)
-  .tg_card(class=`${props.commercial || commercial ? 'tg_card-commercial' : ''}`)
+  .tg_card(class=`${props.commercial || commercial ? 'tg_card-commercial' : ''}`)&attributes(attributes)
     .tg_card_info
       a.tg_card_img(href="tg-channel-full.html", class=`${props.verify ? 'tg_card_img-verify' : ''}`)
         img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
@@ -14,4 +14,5 @@ mixin TgCard(props, commercial = false)
     .tg_card_dinamic(data-table-sort='dinamic', data-table-dinamic=props.dinamic)
       span= props.dinamic
     .tg_card_actions
+      button.table_btn_arrow
       +Btn(`Перейти`, [`${props.commercial || commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

@@ -5,7 +5,7 @@ extends ../layouts/default.pug
 block content
   // Filters
   +Box({type: 'shadow'}, 'Конференции')
-    +FiltersAlt()
+    +FiltersAlt({variant: 'new'})
   
   // Conferences
   +Box({type: 'commercial'})
@@ -47,7 +47,7 @@ block content
         promocode: '123pFd',
         preview: 'assets/images/public/conf/3.jpg'
       },
-    ], '', 'Сентябрь, 2025')
+    ], 'alt-dates', 'Сентябрь, 2025')
 
   // Conferences
   +Box({})

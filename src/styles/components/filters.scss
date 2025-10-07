@@ -458,8 +458,9 @@
 
       &_wrapper {
         @include respond-to(lg) {
-          padding: 16px 0 0;
-          border: none;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          // border: none;
           gap: 15px;
         }
       }

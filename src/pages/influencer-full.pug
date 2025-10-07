@@ -45,11 +45,68 @@ block content
   
   // Partners Table
   +Box({})
-    +TableMain(3, 'Беттинг партнерки:', 'partners', 'Беттинг партнерки с ЦУПИС офферами — это партнерские программы БК, которые работают по лицензии ФНС России. Эти партнерки отличаются от оффшорных: — размером выплат; — требованиям рекламодателей; — ограничениями по гео (принимается трафик только из РФ); По статистике, ЦУПИС')
+    +TableMainNew({
+      type: 'partners',
+      count: 5, 
+      title: 'Беттинг партнерки:',
+      subTitle: 'Беттинг партнерки с ЦУПИС офферами — это партнерские программы БК, которые работают по лицензии ФНС России. Эти партнерки отличаются от оффшорных: — размером выплат; — требованиям рекламодателей; — ограничениями по гео (принимается трафик только из РФ); По статистике, ЦУПИС'
+    })
 
   // Services Table
   +Box({})
-    +TableMain(2, 'Платежки для арбитража')
+    +TableMainNew({
+      count: 5, 
+      title: 'Платежки для арбитража',
+    })
+  
+  // TG Channels Table
+  +Box({})
+    +TableTGNew([
+      {
+        img: 'assets/images/public/tg/1.jpg',
+        title: 'CPALENTA',
+        subTitle: 'Арбитраж трафика',
+        tags: ['Гэмблинг'],
+        subs: 9248,
+        oxvat: 2357,
+        dinamic: '+1039',
+        verify: true,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/tg/2.jpg',
+        title: 'Антон Хоменок',
+        subTitle: '',
+        tags: ['Гэмблинг', 'Образование', 'papa'],
+        subs: 6828,
+        oxvat: 3391,
+        dinamic: '-158',
+        verify: false,
+        commercial: true
+      },
+      {
+        img: 'assets/images/public/tg/3.jpg',
+        title: 'CPALENTA',
+        subTitle: 'Арбитраж трафика',
+        tags: ['Медиа', 'papa', 'Гэмблинг'],
+        subs: 81648,
+        oxvat: 5556,
+        dinamic: '+61',
+        verify: false,
+        commercial: false
+      },
+      {
+        img: 'assets/images/public/tg/4.jpg',
+        title: 'Partneroff',
+        subTitle: 'Affiliate News',
+        tags: ['Медиа', 'papa', 'Гэмблинг'],
+        subs: 758,
+        oxvat: 425,
+        dinamic: '+109',
+        verify: false,
+        commercial: false
+      },
+    ], 'Telegram-каналы', false)
 
   // Post 2
   +Box({})
