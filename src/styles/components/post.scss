@@ -593,6 +593,18 @@
       }
     }
   }
+
+  &--new {
+    @include respond-to(lg) {
+      gap: 15px;
+    }
+
+    #{$post}_content {
+      @include respond-to(lg) {
+        gap: 15px;
+      }
+    }
+  }
 }
 
 // ============

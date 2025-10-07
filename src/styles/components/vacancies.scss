@@ -137,6 +137,63 @@
         border-color: rgba($CULT-FLAME, 0.12);
       }
     }
+
+    &--new {
+      @include respond-to(xl-2) {
+        grid-template-columns: 200px 90px 60px 65px;
+      }
+
+      @include respond-to(xl) {
+        grid-template-columns: 1fr 61px 42px 50px;
+        gap: 8px;
+      }
+
+      #{$card}_img {
+        @include respond-to(xl) {
+          height: 40px;
+          grid-row: unset;
+        }
+      }
+
+      #{$card}_info {
+        @include respond-to(xl) {
+          display: grid;
+          grid-template-columns: 40px 1fr;
+          align-items: center;
+        }
+
+        .tag_items {
+          @include respond-to(xl) {
+            grid-column: 1/3;
+          }
+        }
+      }
+
+      #{$card}_name {
+        span {
+          @include respond-to(xl) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      #{$card}_exp,
+      #{$card}_date {
+        span {
+          @include respond-to(xl) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      #{$card}_pay {
+        span {
+          @include respond-to(xl) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
   }
 }
 

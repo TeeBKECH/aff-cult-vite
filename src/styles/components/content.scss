@@ -20,4 +20,11 @@
       grid-template-columns: minmax(0, 1fr);
     }
   }
+
+  &--new {
+    @include respond-to(lg) {
+      padding: 8px 8px 75px;
+      gap: 8px;
+    }
+  }
 }

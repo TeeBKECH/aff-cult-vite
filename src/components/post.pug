@@ -1,6 +1,6 @@
 mixin Post(props)
-  - const {text = [], title = '', preview, url = 'post-full.html'} = props
-  article.post 
+  - const {text = [], title = '', preview, url = 'post-full.html', variant = ''} = props
+  article.post(class=`${variant ? 'post--' + variant : ''}`)
     .post_head
       .post_author
         +Author({avatar: 'assets/images/svg/avatar.svg', author: 'AFF CULT'})

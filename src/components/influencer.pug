@@ -1,11 +1,11 @@
 mixin InfluencerCard(props)
-  .influencer_card(class=`${props.commercial ? 'influencer_card-commercial' : ''}`)
+  .influencer_card(class=`${props.commercial ? 'influencer_card-commercial' : ''}`)&attributes(attributes)
     a.influencer_card_img(href="influencer-full.html")
       img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
     .influencer_card_info
       a.influencer_card_name(href='influencer-full.html', class=`${props.verify ? 'influencer_card_name-verify' : ''}`)
         span= props.title
-      +Tags({size: 'sm', commercial: props.commercial, count: 2, alt: true}, [
+      +Tags({size: 'sm', commercial: props.commercial, count: 1, alt: true}, [
         'Гэмблинг',
         'Беттинг',
         'Обр',
@@ -17,4 +17,5 @@ mixin InfluencerCard(props)
       .influencer_card_description 
         p= props.description
     .influencer_card_actions
+      button.table_btn_arrow
       +Btn(`Перейти`, [`${props.commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

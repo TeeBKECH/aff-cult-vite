@@ -4,6 +4,28 @@
   -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
   $table: &;
 
+  &_btn_arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.49998 15.8332C7.33446 15.8341 7.17241 15.7858 7.03447 15.6943C6.89654 15.6028 6.78898 15.4723 6.72551 15.3194C6.66204 15.1665 6.64553 14.9982 6.67808 14.8359C6.71064 14.6736 6.79079 14.5247 6.90832 14.4082L11.325 9.99983L6.90832 5.5915C6.7514 5.43458 6.66324 5.22175 6.66324 4.99983C6.66324 4.88995 6.68488 4.78114 6.72693 4.67962C6.76898 4.5781 6.83062 4.48586 6.90832 4.40816C6.98602 4.33046 7.07826 4.26883 7.17978 4.22678C7.28129 4.18473 7.3901 4.16309 7.49998 4.16309C7.7219 4.16309 7.93473 4.25124 8.09165 4.40816L13.0917 9.40816C13.2469 9.5643 13.334 9.77551 13.334 9.99566C13.334 10.2158 13.2469 10.427 13.0917 10.5832L8.09165 15.5832C8.01447 15.6619 7.92243 15.7245 7.82087 15.7675C7.71931 15.8104 7.61024 15.8327 7.49998 15.8332Z' fill='%23322733'/%3E%3C/svg%3E");
+    }
+  }
+
   &_wrapper {
     display: flex;
     flex-direction: column;
@@ -25,7 +47,7 @@
     border-radius: 8px 8px 0 0;
 
     &-services {
-      grid-template-columns: 90px 148px 52px 50px 1fr;
+      grid-template-columns: 90px 148px 52px 50px auto;
       gap: 8px;
       min-width: 592px;
     }
@@ -112,6 +134,49 @@
 
     &_col {
       display: flex;
+
+      &--mobile {
+        display: none;
+
+        @include respond-to(lg) {
+          display: flex;
+        }
+
+        &-xl {
+          display: none;
+          @include respond-to(xl) {
+            display: flex;
+          }
+        }
+      }
+
+      &--tablet {
+      }
+
+      &--tablet {
+      }
+
+      &--desctop {
+        display: flex;
+
+        @include respond-to(lg) {
+          display: none;
+        }
+
+        &-xl {
+          @include respond-to(xl) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &_logo {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
     }
 
     &-services {
@@ -192,6 +257,13 @@
     &-commercial {
       background: $color-12;
       border-color: rgba($CULT-FLAME, 0.22);
+
+      #{$table}_btn_arrow {
+        background: #fff;
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.49998 15.8332C7.33446 15.8341 7.17241 15.7858 7.03447 15.6943C6.89654 15.6028 6.78898 15.4723 6.72551 15.3194C6.66204 15.1665 6.64553 14.9982 6.67808 14.8359C6.71064 14.6736 6.79079 14.5247 6.90832 14.4082L11.325 9.99983L6.90832 5.5915C6.7514 5.43458 6.66324 5.22175 6.66324 4.99983C6.66324 4.88995 6.68488 4.78114 6.72693 4.67962C6.76898 4.5781 6.83062 4.48586 6.90832 4.40816C6.98602 4.33046 7.07826 4.26883 7.17978 4.22678C7.28129 4.18473 7.3901 4.16309 7.49998 4.16309C7.7219 4.16309 7.93473 4.25124 8.09165 4.40816L13.0917 9.40816C13.2469 9.5643 13.334 9.77551 13.334 9.99566C13.334 10.2158 13.2469 10.427 13.0917 10.5832L8.09165 15.5832C8.01447 15.6619 7.92243 15.7245 7.82087 15.7675C7.71931 15.8104 7.61024 15.8327 7.49998 15.8332Z' fill='%23fe6e00'/%3E%3C/svg%3E");
+        }
+      }
     }
   }
 
@@ -201,6 +273,10 @@
     color: $SHADOW-RITE;
     line-height: 1;
     font-weight: 500;
+
+    @include respond-to(sm) {
+      font-size: 14px;
+    }
   }
 
   &_footer {
@@ -250,6 +326,288 @@
           &.sorted-asc,
           &.sorted-desc {
             color: rgba($CULT-FLAME, 1);
+          }
+        }
+      }
+    }
+  }
+
+  &--new {
+    #{$table}_head,
+    #{$table}_items {
+      min-width: unset;
+    }
+
+    &#{$table}-services {
+      #{$table}_head,
+      #{$table}_items {
+        min-width: unset;
+      }
+
+      #{$table}_head {
+        @include respond-to(xl-2) {
+          grid-template-columns: 50px 110px 45px auto;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 50px 1fr 45px;
+        }
+
+        &_item {
+          &:last-child {
+            @include respond-to(xl) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #{$table}_items {
+      }
+
+      #{$table}_item {
+        @include respond-to(xl-2) {
+          grid-template-columns: 50px 110px 45px auto auto auto;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 50px 1fr 45px;
+        }
+
+        &_logo {
+          @include respond-to(xl-2) {
+            margin-bottom: auto;
+          }
+        }
+
+        &_name {
+          p {
+            @include respond-to(xl-2) {
+              font-size: 8px;
+            }
+
+            @include respond-to(xl) {
+              font-size: 10px;
+            }
+          }
+        }
+
+        &_col {
+          &--mobile-xl {
+            grid-column: 1/4;
+            gap: 16px;
+            justify-content: space-between;
+          }
+
+          .copy-to {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    &#{$table}-partners {
+      #{$table}_head {
+        @include respond-to(xl-2) {
+          grid-template-columns: 20px 50px 110px 130px auto;
+          gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 14px 50px 90px 85px auto;
+          padding: 5px;
+        }
+
+        @include respond-to(sm) {
+          grid-template-columns: 14px 50px 85px 75px auto;
+        }
+
+        &_item {
+          @include respond-to(xl) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      #{$table}_items {
+      }
+
+      #{$table}_item {
+        @include respond-to(xl-2) {
+          grid-template-columns: 20px 50px 110px 130px auto auto;
+          gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 14px 50px 90px 85px auto auto;
+          padding: 5px;
+        }
+
+        @include respond-to(sm) {
+          grid-template-columns: 14px 50px 85px 75px auto auto;
+        }
+
+        &_logo {
+          @include respond-to(xl-2) {
+            // margin-bottom: auto;
+          }
+        }
+
+        &_name {
+          a {
+            @include respond-to(xl-2) {
+              // font-size: 8px;
+            }
+
+            @include respond-to(xl) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &_price {
+          @include respond-to(xs) {
+            justify-content: flex-end;
+          }
+        }
+
+        &_col {
+          &--mobile-xl {
+            // grid-column: 1/4;
+            // gap: 16px;
+            // justify-content: space-between;
+          }
+
+          .copy-to {
+            // margin-right: auto;
+          }
+
+          &:last-child {
+            justify-content: flex-end;
+            @include respond-to(xl) {
+            }
+
+            @include respond-to(xs) {
+              // grid-column: 1/6;
+            }
+          }
+
+          &--action {
+            #{$table}_btn_arrow {
+              display: none;
+              @include respond-to(sm) {
+                display: flex;
+              }
+            }
+
+            .btn {
+              @include respond-to(sm) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &#{$table}-vacancies {
+      #{$table}_head {
+        @include respond-to(xl-2) {
+          grid-template-columns: 200px 90px 60px 65px;
+          // gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          grid-template-columns: 1fr 61px 42px 50px;
+          gap: 8px;
+        }
+
+        @include respond-to(sm) {
+          // grid-template-columns: 14px 50px 85px 75px auto;
+        }
+
+        &_item {
+          @include respond-to(xl) {
+            // font-size: 12px;
+          }
+        }
+      }
+
+      #{$table}_items {
+      }
+
+      #{$table}_item {
+        @include respond-to(xl-2) {
+          // gap: 8px;
+        }
+
+        @include respond-to(xl) {
+          // grid-template-columns: 14px 50px 90px 85px auto auto;
+          // padding: 5px;
+        }
+
+        @include respond-to(sm) {
+          // grid-template-columns: 14px 50px 85px 75px auto auto;
+        }
+
+        &_logo {
+          @include respond-to(xl-2) {
+            // margin-bottom: auto;
+          }
+        }
+
+        &_name {
+          a {
+            @include respond-to(xl-2) {
+              // font-size: 8px;
+            }
+
+            @include respond-to(xl) {
+              // font-size: 14px;
+            }
+          }
+        }
+
+        &_price {
+          @include respond-to(xs) {
+            // justify-content: flex-end;
+          }
+        }
+
+        &_col {
+          &--mobile-xl {
+            // grid-column: 1/4;
+            // gap: 16px;
+            // justify-content: space-between;
+          }
+
+          .copy-to {
+            // margin-right: auto;
+          }
+
+          &:last-child {
+            // justify-content: flex-end;
+            @include respond-to(xl) {
+            }
+
+            @include respond-to(xs) {
+              // grid-column: 1/6;
+            }
+          }
+
+          &--action {
+            #{$table}_btn_arrow {
+              // display: none;
+              @include respond-to(sm) {
+                // display: flex;
+              }
+            }
+
+            .btn {
+              @include respond-to(sm) {
+                // display: none;
+              }
+            }
           }
         }
       }

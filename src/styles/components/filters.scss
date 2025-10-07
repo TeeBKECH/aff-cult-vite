@@ -451,4 +451,25 @@
       }
     }
   }
+
+  &--new {
+    #{$filters}_content {
+      transition: all 0s ease-in-out;
+
+      &_wrapper {
+        @include respond-to(lg) {
+          padding: 16px 0 0;
+          border: none;
+          gap: 15px;
+        }
+      }
+      &.show {
+        transition: all 0.3s ease-in-out;
+
+        @include respond-to(lg) {
+          padding-top: 8px;
+        }
+      }
+    }
+  }
 }

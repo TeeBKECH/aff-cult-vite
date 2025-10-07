@@ -1,7 +1,5 @@
 mixin AdBanner(props)
-
   - const {type = 'top', href = '#', banner = '', title = 'Реклама'} = props
- 
   .ad_banner(class=`ad_banner-${type}`)
     a.ad_banner_link(href=href, target="_blank", rel="nofollow", title=title)
       img.ad_banner_img(src=banner, alt=title)

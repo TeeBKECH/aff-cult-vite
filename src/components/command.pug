@@ -1,5 +1,5 @@
 mixin CommandCard(props, commercial = false)
-  .command_card(class=`${props.commercial || commercial ? 'command_card-commercial' : ''}`)
+  .command_card(class=`${props.commercial || commercial ? 'command_card-commercial' : ''}`)&attributes(attributes)
     a.command_card_img(href="command-full.html")
       img(src=`${props.img ? props.img : 'assets/images/public/infl/1.jpg' }`, alt=props.title)
     .command_card_info
@@ -13,4 +13,5 @@ mixin CommandCard(props, commercial = false)
       .command_card_description 
         p= props.description
     .command_card_actions
+      button.table_btn_arrow
       +Btn(`Перейти`, [`${props.commercial || commercial ? 'commercial' : 'default'}`, 'sm', 'f14'])

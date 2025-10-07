@@ -93,10 +93,17 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    $page: &;
 
     &_nav {
       border-bottom: 1px solid $color-1;
       padding-bottom: 20px;
+
+      &_inside {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
     }
 
     &_content {
@@ -114,6 +121,28 @@
         font-size: 16px;
         text-decoration: underline;
         color: rgba($CULT-FLAME, 1);
+      }
+    }
+
+    &--word {
+      #{$page}_nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_inside {
+          .btn {
+            @include respond-to(xl) {
+              padding-left: 8px;
+              padding-right: 8px;
+            }
+            span {
+              @include respond-to(xl) {
+                display: none;
+              }
+            }
+          }
+        }
       }
     }
   }

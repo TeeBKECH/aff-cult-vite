@@ -84,7 +84,7 @@ function renderPug(file, locals, pretty) {
 // Плагин, который дает MPA на Pug:
 // - dev: страница компилируется по запросу, HMR через /@vite/client, никакой полной перекомпиляции
 // - build: генерим html для всех страниц, инъектим итоговые js/css, заменяем .jpg→.webp (опционально) и prettify
-function pugMpaPlugin({ injectWebpOnProd = true, prettifyOnProd = true } = {}) {
+function pugMpaPlugin({ injectWebpOnProd = false, prettifyOnProd = true } = {}) {
   let config
   let pages = scanPages()
 
@@ -223,7 +223,7 @@ function pugMpaPlugin({ injectWebpOnProd = true, prettifyOnProd = true } = {}) {
           )
 
           if (injectWebpOnProd) {
-            html = replaceJpgToWebpInHtml(html)
+            // html = replaceJpgToWebpInHtml(html)
           }
 
           if (prettifyOnProd) {
@@ -269,7 +269,7 @@ export default defineConfig(({ mode }) => {
     // Если используете public/assets — отключите плагин копирования ниже
     plugins: [
       pugMpaPlugin({
-        injectWebpOnProd: true,
+        injectWebpOnProd: false,
         prettifyOnProd: true,
       }),
 

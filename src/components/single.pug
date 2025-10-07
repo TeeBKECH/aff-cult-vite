@@ -1,7 +1,14 @@
-mixin SinglePage(props)
-  .single_page
+mixin SinglePage(props = {})
+  .single_page&attributes(attributes)
     .single_page_nav
       +Btn(props.backBtn, [`go-back`, 'md', 'f16'])
+      if (props.nav)
+        .single_page_nav_inside
+          each item, index in props.nav
+            if (index === 0)
+              +Btn(item, [`go-back`, 'md', 'f14'])
+            else if (index === 1)
+              +Btn(item, [`go-forward`, 'md', 'f14'])
     .single_page_content
       block
       

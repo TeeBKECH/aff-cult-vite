@@ -20,6 +20,8 @@
     }
 
     &-top {
+      position: relative;
+      z-index: 3000;
       max-height: 200px;
 
       @include respond-to(ls) {

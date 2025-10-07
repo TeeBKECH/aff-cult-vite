@@ -1,11 +1,43 @@
 .reacts {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 
   @include respond-to(md) {
     gap: 6px;
+  }
+
+  &_popover {
+    position: absolute;
+    z-index: 1000;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 6px;
+
+    &_list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      max-width: 260px;
+    }
+
+    &_item {
+      font-size: 18px;
+      line-height: 1;
+      padding: 6px 8px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background: #f3f4f6;
+      }
+    }
   }
 }
 
@@ -61,6 +93,11 @@
 
     &-sm {
       padding: 6px 10px;
+    }
+
+    &.active {
+      border-color: $CULT-FLAME;
+      background: $color-12;
     }
   }
 

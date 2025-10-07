@@ -1,5 +1,5 @@
 mixin ReviewStat(text, props)
-  .review-stat
+  .review-stat&attributes(attributes)
     span.review-stat_text= text
     .review-stat_values
       .review-stat_value.review-stat_value-positive= props.positive
