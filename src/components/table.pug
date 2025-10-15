@@ -48,7 +48,9 @@ mixin TableMain(count = 2, title = '', type = 'services', subTitle = '', commerc
               .table_item_col
                 +BtnPrime({text: 'На сайт', size: 'sm', mode: `${i === 2 ? 'commercial' : 'mini'}`})
           - i++
-    a.table_more(href="#") Показать все...
+    .table_actions--alt
+      a.table_more(href="#") Показать все...
+      +Pagination()
 
 mixin TableMainNew({count = 4, title = '', type = 'services', subTitle = '', commercial = false})
   - let i = 0

@@ -9,7 +9,7 @@ mixin Wiki(letter = '', items, size = 'full')
 mixin WikiLetters(lang = 'ru')
   - ruItems = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Я' ]
   - enitems = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
-  .wiki_letters
+  .wiki_letters(data-lang=lang)&attributes(attributes)
     if (lang === 'ru')
       each item in ruItems
         a.wiki_letters_item(href=`#letter-${item}`)= item

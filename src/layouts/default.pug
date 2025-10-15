@@ -34,6 +34,7 @@ include ../components/command.pug
 include ../components/tag.pug
 include ../components/tg.pug
 include ../components/vacancies.pug
+include ../components/pagination.pug
 
 doctype html
 html(lang="ru")
@@ -113,7 +114,7 @@ html(lang="ru")
                 { title: 'Реклама', href: '#' },
                 { title: 'Правила', href: '#' }
               ], 100, 'alt')
-        main.main
+        main.main(data-widget=`${page.slug == 'wiki' ? "wiki" : false}`)
           .player-picker-modal#playerPickerModal(aria-hidden="true" role="dialog" aria-modal="true")
             .player-picker-modal__backdrop(data-close-modal-alt="")
             .player-picker-modal__dialog(role="document")

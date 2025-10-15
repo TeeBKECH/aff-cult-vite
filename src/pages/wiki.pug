@@ -1,14 +1,16 @@
 //- @title: Wiki
 //- @description: Описание Wiki
+//- @slug: wiki
 extends ../layouts/default.pug
 
 block content
   // Filters
   +Box({type: 'shadow', action: 'switcher'}, 'Словарь арбитражника')
     +WikiLetters('en')
+    +WikiLetters('ru')(hidden=true)
   
   // A
-  +Box({})
+  +Box({})(data-lang='en')
     +Wiki('A', [
       'A/B test (А/Б тест, сплит-тест)',
       'API (Application Programming Interface)',
@@ -16,7 +18,7 @@ block content
       'Account (Акк или Аккаунт)',
     ])
   // B
-  +Box({})
+  +Box({})(data-lang='en')
     +Wiki('B', [
       'Banner (Баннер)',
       'Banner Ad (Баннерная реклама)',
@@ -24,12 +26,32 @@ block content
       'Banner Traffic (Баннерный трафик)',
     ])
   // C
-  +Box({})
+  +Box({})(data-lang='en')
     +Wiki('C', [
       'COD (Cash on Delivery)',
       'COS (Cost of sale)',
       'CPA (Cost per acquisition)',
       'CPC (Cost per Click)',
+    ])
+
+  // А
+  +Box({})(hidden=true, data-lang='ru')
+    +Wiki('A', [
+      '(А/Б тест, сплит-тест)',
+      'АПИ'
+    ])
+  // Б
+  +Box({})(data-lang='ru', hidden=true)
+    +Wiki('Б', [
+      '(Баннер)',
+      '(Баннерная реклама)',
+      '(Баннерная слепота)',
+      '(Баннерный трафик)',
+    ])
+  // В
+  +Box({})(hidden = true, data-lang='ru')
+    +Wiki('В', [
+      'ВВВ',
     ])
   
   // LOAD MORE
