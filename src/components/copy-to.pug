@@ -1,7 +1,9 @@
-mixin CopyTo(promocode = '', discount = '50%', size = 'sm')
+mixin CopyTo(promocode = '', discount = '', size = 'sm')
   .copy-to(class=`copy-to-${size}`)
-    span.copy-to_discount= discount
-    span.copy-to_promocode= promocode
-    button.copy-to_btn
-      svg.copy-to_icon(viewBox="0 0 12 12" width="12" height="12")
-        use(href=`assets/images/svg/menu-sprite.svg#copy`)
+    if (discount)
+      span.copy-to_discount= discount
+    if (promocode)
+      span.copy-to_promocode= promocode
+      button.copy-to_btn
+        svg.copy-to_icon(viewBox="0 0 12 12" width="12" height="12")
+          use(href=`assets/images/svg/menu-sprite.svg#copy`)

@@ -83,4 +83,4 @@ mixin ReviewsAddForm(props, variant = false, title = 'Оставить отзы�
             input.reviews_form_input.reviews_form_input--title(type='text', placeholder='Тема (0/60)')
             textarea.reviews_form_input.reviews_form_input--text(name="", placeholder='Ваш отзыв...')
           .reviews_form_action
-            +Btn('Оставить отзыв', [`primary`, 'md', 'f16'])
+            +Btn('Оставить отзыв', [`primary`, 'md', 'f16'], 'form-sended')

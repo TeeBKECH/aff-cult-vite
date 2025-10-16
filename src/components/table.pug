@@ -124,7 +124,7 @@ mixin TableInfluencers(items = [], title = 'Все инфлюенсеры')
           - i++
     .table_footer
       a.table_more(href="#") Показать все...
-      +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'])
+      +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'], 'form-command')
 
 mixin TableInfluencersNew(items = [], title = 'Все инфлюенсеры')
   - let i = 0
@@ -142,7 +142,7 @@ mixin TableInfluencersNew(items = [], title = 'Все инфлюенсеры')
           - i++
     .table_footer
       a.table_more(href="#") Показать все...
-      +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'])
+      +Btn(`Запрос на добавление`, [`glass`, 'sm', 'f14'], 'form-command')
 
 mixin TableCommands(items = [], title = '', commercial = false)
   - let i = 0

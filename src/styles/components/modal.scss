@@ -19,6 +19,23 @@
     @include respond-to(lg) {
       padding: 16px 12px;
     }
+
+    &--alt {
+      position: relative;
+    }
+  }
+
+  &_close {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 2;
+    font-size: 20px;
   }
 
   &_overlay {
@@ -67,6 +84,22 @@
 
       @include respond-to(lg) {
         padding-top: 84px;
+      }
+    }
+  }
+
+  &-center {
+    #{$modal}_content {
+      padding-top: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include respond-to(xl) {
+        // padding-top: 76px;
+      }
+
+      @include respond-to(lg) {
+        // padding-top: 84px;
       }
     }
   }

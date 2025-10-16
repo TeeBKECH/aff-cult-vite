@@ -10,8 +10,10 @@ block content
           h1.title.title-h1 ExGaming
         .single_intro_tags
           span.single_intro_tag Гэмблинг
-        .single_intro_promo
-          +Btn('Получить промокод', [`default-alt`, 'sm', 'f14'])
+        +Btn('Получить промокод', [`default-alt`, 'sm', 'f14'])(data-promo)
+        .single_page_copy.single_page_copy--hidden
+          +CopyTo('AFFCULT', 'Скидка 50%', 'md')
+          a.single_page_copy_link(href="#promo-section") Промокод — как применить?
         .single_intro_info
           p.single_intro_info_item Год открытия: 
             span Неизвестно
@@ -35,6 +37,31 @@ block content
         .single_text-alt
           p Получите 5 000₽ на счёт по промокоду AFFCULT на
             a(href='#') сайте!
+  
+  // How to Use Promo
+  +Box({})(id='promo-section')
+    .single_how
+      .single_content
+        h2.title.title-h2 Как использовать промокод
+        .single_text
+          .single_how_promo
+            p ExGaming -
+            +CopyTo('AFFCULT', '', 'md')
+          p PST.NET предоставляет скидку в 50% на первый месяц обслуживания с промокодом partnerkin. Например, при пополнении баланса на $50, вы сможете сэкономить $25. Только следует также учитывать дополнительные бонусы от сервиса и комиссии банка-эмитента.
+        .single_text
+          h2.title.title-h2 Как ввести и активировать промокод
+          p Промокод partnerkin можно ввести на экране выдачи карты. То есть после регистрации и активации аккаунта.
+          p Для этого выполните следующие действия:
+          p 1. В личном кабинете перейдите во вкладку «Мои карты».
+          img(src="assets/images/public/word-1.jpg", alt="1")
+          p 2. Выпустите любую карту.
+          p 3. Вас перебросит на страницу реквизитов. Укажите тариф, выберите тип платежной системы, добавьте сумму и заполните остальные поля.
+          img(src="assets/images/public/service-1.jpg", alt="1")
+          p 4. Выберите пункт «У меня есть промо-код».
+    
+  // Look a like promos
+  +Box({})
+    +TableMain(5, 'Похожие промокоды', 'services', '', true)
   
   // Services Table
   +Box({})

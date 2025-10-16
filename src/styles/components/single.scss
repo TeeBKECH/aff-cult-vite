@@ -122,6 +122,10 @@
         text-decoration: underline;
         color: rgba($CULT-FLAME, 1);
       }
+
+      &--hidden {
+        display: none;
+      }
     }
 
     &--word {
@@ -247,6 +251,20 @@
 
     &-vacancies {
       gap: 24px;
+    }
+  }
+
+  &_how {
+    &_promo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px;
+
+      p {
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
   }
 

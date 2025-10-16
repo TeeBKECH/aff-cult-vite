@@ -35,6 +35,7 @@ include ../components/tag.pug
 include ../components/tg.pug
 include ../components/vacancies.pug
 include ../components/pagination.pug
+include ../components/form.pug
 
 doctype html
 html(lang="ru")
@@ -134,3 +135,27 @@ html(lang="ru")
           block content
         block sidebar-r
       include ../components/footer.pug
+
+    // Modal form send success
+    +Modal('form-sended', 'center')
+      .modal_box.modal_box--alt
+        .modal_close(data-close) &times;
+        +FormSended()
+
+    // Modal form Representative
+    +Modal('form-representative', 'center')
+      .modal_box.modal_box--alt
+        .modal_close(data-close) &times;
+        +Form({title: 'Стать представителем', subTitle: "Пройдите верификацию", type: 'representative'})
+
+    // Modal form Mostake
+    +Modal('form-mistake', 'center')
+      .modal_box.modal_box--alt
+        .modal_close(data-close) &times;
+        +Form({title: 'Сообщить об ошибке', subTitle: "опишите ошибку", type: 'mistake'})
+    
+    // Modal form Command
+    +Modal('form-command', 'center')
+      .modal_box.modal_box--alt
+        .modal_close(data-close) &times;
+        +Form({title: 'Запрос на добавление', subTitle: "Заполните поля формы", type: 'command'})

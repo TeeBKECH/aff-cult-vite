@@ -130,4 +130,70 @@ document.addEventListener('DOMContentLoaded', (e) => {
       // if (input) input.focus()
     },
   })
+  registerModal('form-sended', {
+    closeOnBackdrop: false, // Не закрывать при клике на бэкдроп
+    closeOnEscape: true,
+    exclusive: true,
+    onOpen: (modal) => console.log('Modal открыто'),
+  })
+  registerModal('form-representative', {
+    closeOnBackdrop: false, // Не закрывать при клике на бэкдроп
+    closeOnEscape: true,
+    exclusive: true,
+    onOpen: (modal) => console.log('Modal открыто'),
+  })
+  registerModal('form-mistake', {
+    closeOnBackdrop: false, // Не закрывать при клике на бэкдроп
+    closeOnEscape: true,
+    exclusive: true,
+    onOpen: (modal) => console.log('Modal открыто'),
+  })
+  registerModal('form-command', {
+    closeOnBackdrop: false, // Не закрывать при клике на бэкдроп
+    closeOnEscape: true,
+    exclusive: true,
+    onOpen: (modal) => console.log('Modal открыто'),
+  })
+
+  // Кнопки показа промокода
+  const btns = document.querySelectorAll('[data-promo]')
+  if (btns?.length > 0) {
+    btns.forEach((btn) => {
+      const copyEl = btn.nextElementSibling
+      btn.addEventListener('click', (e) => {
+        btn.style = 'display: none;'
+        copyEl.classList.remove('single_page_copy--hidden')
+        console.log(copyEl)
+      })
+    })
+  }
+
+  /* Smooth Scroll by Anchor links */
+  // Добавляем обработчик для каждой ссылки
+  const anchorLinks = document.querySelectorAll('a[href^="#"]')
+  const offsetTop = 80
+  anchorLinks.forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault() // Предотвращаем стандартное поведение
+
+      // Получаем ID целевого артикла из href ссылки
+      const targetId = this.getAttribute('href')
+      const targetArticle = document.querySelector(targetId)
+
+      if (targetArticle) {
+        // Вычисляем позицию, куда нужно прокрутить
+        const targetPosition = targetArticle.offsetTop - offsetTop
+
+        // Плавная прокрутка
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        })
+
+        // Добавляем/удаляем класс активной ссылки
+        // navLinks.forEach((link) => link.classList.remove('active'))
+        // this.classList.add('active')
+      }
+    })
+  })
 })

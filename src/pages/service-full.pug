@@ -10,11 +10,11 @@ block content
           .single_intro_verify
             h1.title.title-h1.single_intro_verify_text
               span PST.NET
-            +Btn(`Стать представителем`, [`glass`, 'xs', 'f12', 'rounded'])
+            +Btn(`Стать представителем`, [`glass`, 'xs', 'f12', 'rounded'], 'form-representative')
           p Платежки для рекламы. Эксклюзивные бины карт
         .single_page_copy
           +CopyTo('AFFCULT', 'Скидка 50%', 'md')
-          a.single_page_copy_link(href="#") Промокод — как применить?
+          a.single_page_copy_link(href="#promo-section") Промокод — как применить?
         .single_intro_info
           p.single_intro_info_item Год открытия: 
             span Неизвестно
@@ -85,9 +85,34 @@ block content
           li Платежные карты: Visa, Mastercard
     a.hashtag(href='#') #сервис
   
+  // How to Use Promo
+  +Box({})(id='promo-section')
+    .single_how
+      .single_content
+        h2.title.title-h2 Как использовать промокод
+        .single_text
+          .single_how_promo
+            p ExGaming -
+            +CopyTo('AFFCULT', '', 'md')
+          p PST.NET предоставляет скидку в 50% на первый месяц обслуживания с промокодом partnerkin. Например, при пополнении баланса на $50, вы сможете сэкономить $25. Только следует также учитывать дополнительные бонусы от сервиса и комиссии банка-эмитента.
+        .single_text
+          h2.title.title-h2 Как ввести и активировать промокод
+          p Промокод partnerkin можно ввести на экране выдачи карты. То есть после регистрации и активации аккаунта.
+          p Для этого выполните следующие действия:
+          p 1. В личном кабинете перейдите во вкладку «Мои карты».
+          img(src="assets/images/public/word-1.jpg", alt="1")
+          p 2. Выпустите любую карту.
+          p 3. Вас перебросит на страницу реквизитов. Укажите тариф, выберите тип платежной системы, добавьте сумму и заполните остальные поля.
+          img(src="assets/images/public/service-1.jpg", alt="1")
+          p 4. Выберите пункт «У меня есть промо-код».
+  
+  // Look a like promos
+  +Box({})
+    +TableMainNew(5, 'Похожие промокоды', 'services', '', true)
+  
   // Services Table
   +Box({})
-    +TableInfluencers([
+    +TableInfluencersNew([
       {
         img: 'assets/images/public/infl/1.jpg',
         title: 'Александр Дужников',

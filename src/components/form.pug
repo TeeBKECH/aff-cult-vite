@@ -1,0 +1,37 @@
+mixin FormSended(props)
+  .form_sended
+    .form_sended_title Успешно отправлено!
+    .form_sended_icon
+      img(src="assets/images/svg/success.svg", alt="OK")
+
+mixin Form(props)
+  .form-me_wrapper
+    .form-me_title
+      span= props.title
+      p= props.subTitle
+    form.form-me
+      .form-me_controls
+        if (props.type === 'representative')
+          .form-me_control
+            input.form-me_input.form-me_input--name(type='text', placeholder='Ваше Имя')
+          .form-me_control
+            input.form-me_input.form-me_input--phone(type='text', placeholder='Ваш Телефон')
+          .form-me_control
+            input.form-me_input.form-me_input--email(type='text', placeholder='Ваш E-mail')
+        else if (props.type === 'mistake')
+          .form-me_control
+            input.form-me_input.form-me_input--email(type='text', placeholder='Ваш E-mail')
+          .form-me_control
+            textarea.form-me_input.form-me_input--text(type='text', placeholder='Что не так')
+        else if (props.type === 'command')
+          .form-me_control
+            input.form-me_input.form-me_input--name(type='text', placeholder='Ваше Имя')
+          .form-me_control
+            input.form-me_input.form-me_input--phone(type='text', placeholder='Ваш Телефон')
+          .form-me_control
+            input.form-me_input.form-me_input--email(type='text', placeholder='Ваш E-mail или @Telegram')
+        .form-me_control.form-me_control--submit
+          +Btn('Отправить', ['grad', 'md', 'f16'], 'form-sended')
+      .form-me_privacy
+        p Отправляя сообщение вы соглашаетесь с 
+          a(href='/privacy.html') политикой конфиденциальности

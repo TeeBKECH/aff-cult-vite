@@ -20,7 +20,7 @@ mixin Btn(text = 'Текст кнопки', styles = ['default'], fn = 'log', ty
   - let classes = ''
   each item in styles
     - classes+= ` btn--${item}`
-  button(type=type, class=`btn${classes}`, data-fn-trigger=fn, data-modal=fn data-modal-action='toggle')
+  button(type=type, class=`btn${classes}`, data-modal=fn data-modal-action='toggle')&attributes(attributes)
     span= text
 
 mixin BtnIcon(props)
